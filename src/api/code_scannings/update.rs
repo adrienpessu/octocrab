@@ -1,4 +1,3 @@
-use crate::api::code_scannings::list::ListCodeScanningsBuilder;
 use super::*;
 
 #[derive(serde::Serialize)]

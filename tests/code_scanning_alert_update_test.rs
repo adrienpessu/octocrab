@@ -7,6 +7,7 @@ use wiremock::{
 use mock_error::setup_error_handler;
 use octocrab::models::code_scannings::CodeScanningAlert;
 use octocrab::Octocrab;
+use octocrab::params::AlertState;
 
 mod mock_error;
 
@@ -54,7 +55,7 @@ async fn check_patch_200() {
     let result = client
         .code_scannings(OWNER.to_owned(), REPO.to_owned())
         .update(1)
-        .state(Params::State::Open)
+        .state(AlertState::Open)
         .send()
         .await;
 
