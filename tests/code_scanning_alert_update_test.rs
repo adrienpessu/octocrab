@@ -6,8 +6,8 @@ use wiremock::{
 
 use mock_error::setup_error_handler;
 use octocrab::models::code_scannings::CodeScanningAlert;
-use octocrab::Octocrab;
 use octocrab::params::AlertState;
+use octocrab::Octocrab;
 
 mod mock_error;
 
