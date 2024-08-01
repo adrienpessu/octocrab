@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.39.1](https://github.com/adrienpessu/octocrab/compare/v0.39.0...v0.39.1) - 2024-08-01
+
+### Other
+- Fix 
+- Update Code Scanning alert ([#3](https://github.com/adrienpessu/octocrab/pull/3))
+
 ## [0.39.0](https://github.com/XAMPPRocky/octocrab/compare/v0.38.0...v0.39.0) - 2024-07-30
 
 ### Added
