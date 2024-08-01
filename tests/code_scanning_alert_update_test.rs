@@ -1,4 +1,3 @@
-use serde::{Deserialize, Serialize};
 use wiremock::{
     matchers::{method, path},
     Mock, MockServer, ResponseTemplate,
@@ -18,7 +17,7 @@ async fn setup_issue_check_assignee_api(template: ResponseTemplate) -> MockServe
 
     let mock_server = MockServer::start().await;
 
-    Mock::given(method("GET"))
+    Mock::given(method("PATCH"))
         .and(path(format!(
             "/repos/{owner}/{repo}/code-scanning/alerts/{number}",
             owner = owner,
@@ -42,7 +41,6 @@ fn setup_octocrab(uri: &str) -> Octocrab {
 
 const OWNER: &str = "org";
 const REPO: &str = "some-repo";
-const ASSIGNEE: &str = "some-user";
 
 #[tokio::test]
 async fn check_patch_200() {
@@ -64,11 +62,4 @@ async fn check_patch_200() {
         "expected successful result, got error: {:#?}",
         result
     );
-}
-
-#[derive(Debug, Deserialize, Serialize)]
-struct GitHubErrorBody {
-    pub documentation_url: Option<String>,
-    pub message: Option<String>,
-    pub status: Option<String>,
 }
